@@ -1,6 +1,7 @@
 import PerfectHTTP
 import PerfectHTTPServer
 import PerfectLib
+import Foundation
 
 // Register your own routes and handlers
 var routes = Routes()
@@ -42,6 +43,7 @@ routes.add(method: .get, uri: "/json") { request, response in
 
 
 routes.add(method: .get, uri: "/tyler") { request, response in
+    
     do {
         let tyler = File(Dir.workingDir.path + "img/me.jpeg")
         let imageSize = tyler.size
@@ -53,6 +55,24 @@ routes.add(method: .get, uri: "/tyler") { request, response in
         response.status = .internalServerError
         response.setBody(string: "Error handling request: \(error)")
     }
+    response.completed()
+}
+
+routes.add(method: .get, uri: "/user") { request, response in
+    
+    let user = UserObject(username: "fdsfds", age: 42, isFunToBeAround: true)
+    
+    guard let encodedData = try? JSONEncoder().encode(user) else {
+        response.status = .internalServerError
+        print("encoding error")
+        return
+    }
+    response.setBody(bytes: Array(encodedData))
+    response.completed()
+}
+
+routes.add(method: .get, uri: "/iamerror") { request, response in
+    response.status = .notFound
     response.completed()
 }
 

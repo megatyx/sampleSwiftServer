@@ -11,6 +11,24 @@
         }
       },
       {
+        "package": "PerfectCBSON",
+        "repositoryURL": "https://github.com/PerfectSideRepos/Perfect-CBSON.git",
+        "state": {
+          "branch": null,
+          "revision": "284580ca67c25ff11987e94b30af99463a11e7bb",
+          "version": "0.0.4"
+        }
+      },
+      {
+        "package": "PerfectCMongo",
+        "repositoryURL": "https://github.com/PerfectSideRepos/Perfect-CMongo.git",
+        "state": {
+          "branch": null,
+          "revision": "ea0b1508c37c544d0ed4dcf936805d3ff5bae278",
+          "version": "0.0.4"
+        }
+      },
+      {
         "package": "PerfectCZlib",
         "repositoryURL": "https://github.com/PerfectlySoft/Perfect-CZlib-src.git",
         "state": {
@@ -53,6 +71,15 @@
           "branch": null,
           "revision": "0ab139ad6001ad4c3bb1b9714f11168a74af8e79",
           "version": "3.0.3"
+        }
+      },
+      {
+        "package": "PerfectMongoDB",
+        "repositoryURL": "https://github.com/PerfectlySoft/Perfect-MongoDB.git",
+        "state": {
+          "branch": null,
+          "revision": "121d094951217a5dc6d250dc35a9fd805a0b0156",
+          "version": "3.1.0"
         }
       },
       {
