@@ -12,5 +12,6 @@ struct UserObject: Codable {
     let username: String
     let age: Int
     let isFunToBeAround: Bool
+    let user: [User]?
     
 }
