@@ -10,11 +10,9 @@ import PerfectHTTP
 import PerfectHTTPServer
 import PerfectLib
 
-class ServerRoutes {
+struct ServerRoutes {
     
-    let routes = buildRoutes()
-    
-    fileprivate class func buildRoutes() -> Routes {
+     func buildRoutes() -> Routes {
         // Register your own routes and handlers
         var routes = Routes()
         routes.add(method: .get, uri: "/") {
