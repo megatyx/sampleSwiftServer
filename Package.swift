@@ -7,9 +7,10 @@ let package = Package(
 	name: "MyAwesomeProject",
 	dependencies: [
 		.package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", "3.0.0"..<"4.0.0"),
-        .package(url:"https://github.com/PerfectlySoft/Perfect-MongoDB.git", "0.0.0"..<"10.0.0")
+        .package(url:"https://github.com/PerfectlySoft/Perfect-MongoDB.git", "0.0.0"..<"10.0.0"),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "4.0.0")
 	],
 	targets: [
-		.target(name: "MyAwesomeProject", dependencies: ["PerfectHTTPServer"]),
+		.target(name: "MyAwesomeProject", dependencies: ["PerfectHTTPServer","Alamofire"])
 	]
 )

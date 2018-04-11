@@ -17,7 +17,7 @@ struct ServerRoutes {
         var routes = Routes()
         routes.add(method: .get, uri: "/") { request, response in
             response.setHeader(.contentType, value: "text/html")
-            response.appendBody(string: "<html><title>error</title><body>API Root</body></html>")
+            response.appendBody(string: "<html><title>sampleSwiftServer</title><body>API Root</body></html>")
             response.completed()
         }
         
@@ -36,7 +36,7 @@ struct ServerRoutes {
                 }
             } else {
                 response.setHeader(.contentType, value: "text/html")
-                response.appendBody(string: "<html><title>error</title><body>Hello, world!</body></html>")
+                response.appendBody(string: "<html><title>sampleSwiftServer</title><body>Hello, world!</body></html>")
             }
             response.completed()
         }
@@ -57,6 +57,24 @@ struct ServerRoutes {
         routes.add(method: .get, uri: "/iamerror") { request, response in
             response.status = .notFound
             response.completed()
+        }
+        
+        routes.add(method: .get, uri: "/check") { request, response in
+            print("going into API check")
+            
+            APISession.check(success: {
+                response.setHeader(.contentType, value: "text/html")
+                response.appendBody(string: "<html><title>sldkfja;lksdjf</title><body>API</body></html>")
+                response.completed()
+            })
+        }
+        
+        routes.add(method: .get, uri: "/login") { request, response in
+            APISession.login(email: "tyler@test.com", password:"abc123@", success: {
+                response.setHeader(.contentType, value: "text/html")
+                response.appendBody(string: "<html><title>sampleSwiftServer</title><body>API Root</body></html>")
+                response.completed()
+            })
         }
         return routes
     }

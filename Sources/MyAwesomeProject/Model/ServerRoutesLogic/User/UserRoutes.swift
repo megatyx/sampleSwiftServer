@@ -28,7 +28,6 @@ extension ServerRoutes {
         }
         
         routes.add(method: .get, uri: "/user/test") { request, response in
-            
             var returnedArray = Array<UserObject>()
             
             for _ in 1...3 {
@@ -46,9 +45,7 @@ extension ServerRoutes {
             }
             response.setBody(bytes: Array(encodedData))
             response.completed()
-            
         }
-        
         return routes
     }
     
